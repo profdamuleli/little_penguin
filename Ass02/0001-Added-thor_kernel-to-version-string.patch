@@ -1,0 +1,30 @@
+From 753119799d43a73935e1659ff8f9bf9dca9989b1 Mon Sep 17 00:00:00 2001
+From: Lutendo <profdamuleli@gmail.com>
+Date: Thu, 4 Oct 2018 10:26:50 +0200
+Subject: [PATCH 2/2] Added -thor_kernel to version string
+
+---
+ Ass02/Makefile | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+ create mode 100644 Ass02/Makefile
+
+diff --git a/Ass02/Makefile b/Ass02/Makefile
+new file mode 100644
+index 0000000..e338dae
+--- /dev/null
++++ b/Ass02/Makefile
+@@ -0,0 +1,11 @@
++# SPDX-License-Identifier: GPL-2.0
++VERSION = 4
++PATCHLEVEL = 19
++SUBLEVEL = 0
++# EXTRAVERSION = -rc4
++EXTRAVERSION = -rc4-thor_kernel
++NAME = Merciless Moray
++
++# *DOCUMENTATION*
++
++
+-- 
+2.17.1
+
