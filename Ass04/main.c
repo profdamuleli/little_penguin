@@ -4,7 +4,7 @@
 #include <linux/hid.h>
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Tshilidzi Tshivhula <pboyfunclub@gmail.com>");
+MODULE_AUTHOR("Lutendo Damuleli <profdamuleli@gmail.com>");
 MODULE_DESCRIPTION("usb module");
 
 static int driverprobe(struct usb_interface *intf,
@@ -28,8 +28,8 @@ static const struct usb_device_id supported_d_table[] = {
 
 MODULE_DEVICE_TABLE(usb, supported_d_table);
 
-static struct usb_driver ttshivhu = {
-	.name = "ttshivhu",
+static struct usb_driver ldamulel = {
+	.name = "ldamulel",
 	.id_table = supported_d_table,
 	.probe = driverprobe,
 	.disconnect = driverdisconnect,
@@ -38,13 +38,13 @@ static struct usb_driver ttshivhu = {
 static int __init entry_point(void)
 {
 	printk(KERN_INFO "Hello world!\n");
-	return usb_register(&ttshivhu);
+	return usb_register(&ldamulel);
 }
 
 static void __exit exit_point(void)
 {
 	printk(KERN_INFO "Cleaning up module.\n");
-	usb_deregister(&ttshivhu);
+	usb_deregister(&ldamulel);
 }
 module_init(entry_point);
 module_exit(exit_point);

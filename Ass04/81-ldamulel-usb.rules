@@ -1,0 +1,1 @@
+SUBSYSTEM=="input", SUBSYSTEMS=="usb", ACTION=="add", RUN+="/sbin/insmod /root/ldamulel/little_p/Ass04/main.ko"
