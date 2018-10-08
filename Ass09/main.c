@@ -1,16 +1,16 @@
 #include <linux/module.h>
-#include <linux/kernel.h>
 #include <linux/seq_file.h>
 #include <linux/mount.h>
+#include <linux/kernel.h>
 #include <linux/proc_fs.h>
 #include <linux/fs_struct.h>
 #include <linux/fs.h>
-#include <linux/namei.h>
 #include <linux/kallsyms.h>
+#include <linux/namei.h>
 #include <linux/slab.h>
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Tshilidzi Tshivhula <pboyfunclub@gmail.com>");
+MODULE_AUTHOR("Lutendo Damuleli");
 MODULE_DESCRIPTION("mount points module");
 
 static struct proc_dir_entry *proc_entry;
@@ -65,7 +65,7 @@ static struct file_operations seqfops = {
 	.read = seq_read,
 };
 
-static int __init entry_point(void)
+static int init_point(void)
 {
 	printk(KERN_INFO "Hello world!\n");
 	proc_entry = proc_create("mymounts", 0644, NULL, &seqfops);
@@ -73,11 +73,11 @@ static int __init entry_point(void)
 	return 0;
 }
 
-static void __exit exit_point(void)
+static void exit_point(void)
 {
 	kfree(buff);
 	remove_proc_entry("mymounts", NULL);
 	printk(KERN_INFO "Cleaning up module.\n");
 }
-module_init(entry_point);
+module_init(init_point);
 module_exit(exit_point)
